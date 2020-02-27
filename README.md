@@ -15,6 +15,14 @@
 3. The front end app is responsive for mobile and laptop screen
 4. Added tests for two components (select, character card) with two different testing library (react-testing-library, enzyme)
 
+### Some important commands to run and test the app
+
+1. Please run `npm i` in the root folder and inside the client folder.
+2. To run the app please run `npm run dev` at the root folder.
+3. Visit [http://localhost:3000/](http://localhost:3000/) to see the app running
+4. To run the UI tests please run `npm test` inside client folder.
+5. To see the code coverate please run `npm test -- --coverage`
+
 ### Demo
 
 #### This app is deployed on heroku. Please find below the link
