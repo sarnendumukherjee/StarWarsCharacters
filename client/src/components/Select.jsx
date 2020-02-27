@@ -20,6 +20,7 @@ const OutlinedSelect = ({
         {label}
       </InputLabel>
       <Select
+        data-testid={`select-${label}`}
         fullWidth
         native
         onChange={onChange}
