@@ -13,6 +13,7 @@
 1. Front end technologies used are React, MaterialUI
 2. Back end technologies used are Node, Express
 3. The front end app is responsive for mobile and laptop screen
+4. Added tests for two components (select, character card) with two different testing library (react-testing-library, enzyme)
 
 ### Demo
 
