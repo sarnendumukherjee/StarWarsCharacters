@@ -1,7 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import { InputLabel, FormControl, Select } from "@material-ui/core";
 
-const OutlinedSelect = props => {
+const OutlinedSelect = ({
+  label,
+  options,
+  onChange,
+  noOptionMessage,
+  disabled
+}) => {
   const inputLabel = useRef(null);
   const [labelWidth, setLabelWidth] = useState(0);
   useEffect(() => {
@@ -9,25 +15,32 @@ const OutlinedSelect = props => {
   }, []);
 
   return (
-    <FormControl variant="outlined" fullWidth>
-      <InputLabel ref={inputLabel} htmlFor={props.label}>
-        {props.label}
+    <FormControl variant="outlined" fullWidth disabled={disabled}>
+      <InputLabel ref={inputLabel} htmlFor={label}>
+        {label}
       </InputLabel>
       <Select
         fullWidth
         native
-        value={props.value}
-        onChange={props.onChange}
+        onChange={onChange}
         labelWidth={labelWidth}
         inputProps={{
-          name: props.label,
-          id: props.label
+          name: label,
+          id: label
         }}
       >
-        <option value="" />
-        <option value={10}>Ten</option>
-        <option value={20}>Twenty</option>
-        <option value={30}>Thirty</option>
+        {options ? (
+          <>
+            <option value={0}>Please select</option>
+            {options.map(option => (
+              <option key={option.value} value={option.value}>
+                {option.text}
+              </option>
+            ))}
+          </>
+        ) : (
+          <option value={0}>{noOptionMessage}</option>
+        )}
       </Select>
     </FormControl>
   );
