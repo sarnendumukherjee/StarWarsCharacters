@@ -7,9 +7,9 @@ import {
   Grid
 } from "@material-ui/core";
 
-const ResultCard = ({ character }) => {
+const CharacterCard = ({ character }) => {
   return (
-    <Card className="" style={{ border: "1px solid white" }}>
+    <Card>
       <CardActionArea>
         {/* This way you can show a image of the character */}
         {/* <CardMedia
@@ -20,7 +20,12 @@ const ResultCard = ({ character }) => {
           title="Yoda"
         /> */}
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography
+            className="characterName"
+            gutterBottom
+            variant="h5"
+            component="h2"
+          >
             {character.name}
           </Typography>
           <Grid container>
@@ -46,13 +51,17 @@ const ResultCard = ({ character }) => {
               Home World
             </Grid>
             <Grid item xs={8}>
-              {character.homeworld && character.homeworld.name}
+              <span className="homeWorld">
+                {character.homeworld && character.homeworld.name}
+              </span>
             </Grid>
             <Grid item xs={4}>
               Species
             </Grid>
             <Grid item xs={8}>
-              {character.species && character.species.name}
+              <span className="species">
+                {character.species && character.species.name}
+              </span>
             </Grid>
           </Grid>
         </CardContent>
@@ -61,4 +70,4 @@ const ResultCard = ({ character }) => {
   );
 };
 
-export default ResultCard;
+export default CharacterCard;
