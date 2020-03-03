@@ -4,7 +4,7 @@
 
 - GraphQL related
   - The graphql endpoint is not that search friendly. As per my understanding, the api does not support filter to the full extent. Ex. if you want to filter the planets based on the species.
-  - graphql endpoint does not have any image data that can be used to show the character images in the UI as per the dummy design. Some other start wars api providers give an image link with the user.
+  - graphql endpoint does not have any image data that can be used to show the character images in the UI as per the dummy design. Some other Star wars api providers give an image link with the user.
   - With swapi I could not find a way to filter the planets based on the species.
   - ultimately using this swapi more over the graphql version was a pain in my opinion.
 
