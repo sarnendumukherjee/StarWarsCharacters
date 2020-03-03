@@ -9,7 +9,7 @@ export const getOptionsFromSpecies = species => {
 export const getFilteredCharacters = (characters, species) => {
   return characters.filter(character => {
     if (species) {
-      return character.species.id === species;
+      return character.species && character.species.id === species;
     }
     return true;
   });
